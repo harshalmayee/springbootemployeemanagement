@@ -1,0 +1,37 @@
+#Spring DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring:
+  datasource:
+    password:
+    url: jdbc:h2:mem:testdb
+    username: sa
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  application:
+    name: Spring-Boot-REST-Hibernate-PostgreSql-Thymeleaf-CRUD
+  output:
+    ansi:
+      enabled: ALWAYS
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.type.descriptor.sql: trace
+    org.springframewoek.web : ERROR
+    com.javaguides : DEBUG
+  pattern:
+    #console: "%d %-5level %logger : %msg%n"
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %highlight(%-5level) %cyan(%logger{15}) - %msg %n"
+    #console: "%date  %highlight(%-5level) [%12.12thread] %cyan(%-40.40logger{40}) : %msg %n"
+
+
+
+
